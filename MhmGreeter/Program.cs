@@ -6,6 +6,9 @@ namespace MhmGreeter
 	{
 		public static void Main (string[] args)
 		{
+			// menuConfig = [{'a', English}, {'b', French}, {'c', Dog}]
+			// Menu menu = new Menu (menuConfig);
+			 
 			Menu menu = new Menu ();
 			menu.PrintWelcomeScreen ();
 
