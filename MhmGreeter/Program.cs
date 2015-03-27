@@ -1,17 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace MhmGreeter
 {
+	using MenuItem = KeyValuePair<string, GreetingType>;
+	using MenuConfig = List<KeyValuePair<string, GreetingType>>;
+
 	class MainClass
 	{
+		 
 		public static void Main (string[] args)
 		{
-			// menuConfig = [{'a', English}, {'b', French}, {'c', Dog}]
-			// Menu menu = new Menu (menuConfig);
+			MenuConfig menuConfig = new MenuConfig () {
+				new MenuItem ( "a", GreetingType.ENGLISH ),
+				new MenuItem ( "b", GreetingType.FRENCH ), 
+				new MenuItem ( "c", GreetingType.DOG ) 
+			};
+			Menu menu = new Menu (menuConfig);
 			 
-			Menu menu = new Menu ();
 			menu.PrintWelcomeScreen ();
-
 			menu.PrintInitialMenuWithPrompt ();
 			while (true) {
 				var greetingSelection = menu.ReadGreetingSelection ();

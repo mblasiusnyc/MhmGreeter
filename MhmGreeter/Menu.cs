@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MhmGreeter
 {
 	class Menu
 	{
-		public Menu()
+		private List<KeyValuePair<string, GreetingType>> _menuItems;
+
+		public Menu(List<KeyValuePair<string, GreetingType>> menuItems)
 		{
-			
+			_menuItems = menuItems;
 		}
 
 		public void PrintWelcomeScreen ()
@@ -16,7 +19,10 @@ namespace MhmGreeter
 
 		public void PrintGreetingMenu ()
 		{
-			// TODO: print all greeting options
+			foreach(var menuItem in _menuItems) 
+			{
+				Console.WriteLine(menuItem.Key);
+			}
 		}
 
 		public void PrintExitOption ()
