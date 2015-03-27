@@ -14,7 +14,7 @@ namespace MhmGreeter
 				var greetingSelection = menu.ReadGreetingSelection ();
 
 				// quit
-				if (greetingSelection.ToLower () == "x") {
+				if (UserWantsToExit(greetingSelection)) {
 					break;
 				}
 
@@ -22,7 +22,7 @@ namespace MhmGreeter
 			}
 		}
 
-		static bool userWantsToExit (string greetingSelection)
+		static bool UserWantsToExit (string greetingSelection)
 		{
 			return greetingSelection.ToLower () == "x";
 		}
