@@ -8,33 +8,35 @@ namespace MhmGreeter
 
 	class MainClass
 	{
-		 
 		public static void Main (string[] args)
 		{
-			MenuConfig menuConfig = new MenuConfig () {
+			var menuConfig = new MenuConfig () {
 				{ "a", GreetingType.ENGLISH },
 				{ "b", GreetingType.FRENCH },
-				{ "c", GreetingType.DOG } 
+				{ "c", GreetingType.DOG },
+				{ "x", GreetingType.EXIT } 
 			};
+
 			Menu menu = new Menu (menuConfig);
-			 
 			menu.PrintWelcomeScreen ();
 			menu.PrintInitialMenuWithPrompt ();
+
 			while (true) {
 				var greetingSelection = menu.ReadGreetingSelection ();
 
-				// quit
-				if (UserWantsToExit(greetingSelection)) {
+				if (greetingSelection == GreetingType.EXIT) {
 					break;
 				}
 
-				menu.PrintLoopingMenuWithPrompt ();
+				if (greetingSelection == GreetingType.INVALID) {
+					menu.PrintInvalidSelectionWarningWithPrompt ();
+				} else {
+					Console.WriteLine("You selected: " + greetingSelection);
+					menu.PrintLoopingMenuWithPrompt ();
+				}
 			}
-		}
 
-		static bool UserWantsToExit (string greetingSelection)
-		{
-			return greetingSelection.ToLower () == "x";
+			Console.WriteLine ("Goodbye!");
 		}
 	}
 }

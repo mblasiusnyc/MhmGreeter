@@ -50,10 +50,22 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public string ReadGreetingSelection ()
+		public void PrintInvalidSelectionWarningWithPrompt ()
 		{
-			var input = Console.ReadLine ();
-			return input;
+			Console.WriteLine ("I'm sorry, that selection is invalid. Please select a _real_ greeting");
+			PrintPrompt ();
+		}
+
+		public GreetingType ReadGreetingSelection ()
+		{
+			var key = Console.ReadLine ();
+
+			if (_menuItems.ContainsKey (key)) {
+				return _menuItems [key];
+			} else {
+				return GreetingType.INVALID;
+			}
+
 		}
 	}
 }
