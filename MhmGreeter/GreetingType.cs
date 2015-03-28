@@ -10,6 +10,8 @@ namespace MhmGreeter
 		FRENCH,
 		IMPATIENT,
 		MULTILINGUAL,
-		RANDOM
+		RANDOM,
+		EXIT,
+		INVALID
 	}
 }
