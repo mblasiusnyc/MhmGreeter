@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MhmGreeter
 {
 	class Menu
 	{
-		public Menu()
+		private Dictionary<string,GreetingType> _menuItems;
+
+		public Menu(Dictionary<string, GreetingType> menuItems)
 		{
-			
+			_menuItems = menuItems;
 		}
 
 		public void PrintWelcomeScreen ()
@@ -16,7 +19,10 @@ namespace MhmGreeter
 
 		public void PrintGreetingMenu ()
 		{
-			// TODO: print all greeting options
+			foreach(var menuItem in _menuItems) 
+			{
+				Console.WriteLine(menuItem.Key);
+			}
 		}
 
 		public void PrintExitOption ()
@@ -44,10 +50,22 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public string ReadGreetingSelection ()
+		public void PrintInvalidSelectionWarningWithPrompt ()
 		{
-			var input = Console.ReadLine ();
-			return input;
+			Console.WriteLine ("I'm sorry, that selection is invalid. Please select a _real_ greeting");
+			PrintPrompt ();
+		}
+
+		public GreetingType ReadGreetingSelection ()
+		{
+			var key = Console.ReadLine ();
+
+			if (_menuItems.ContainsKey (key)) {
+				return _menuItems [key];
+			} else {
+				return GreetingType.INVALID;
+			}
+
 		}
 	}
 }
