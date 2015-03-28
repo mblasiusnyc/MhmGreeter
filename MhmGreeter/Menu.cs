@@ -5,9 +5,9 @@ namespace MhmGreeter
 {
 	class Menu
 	{
-		private List<KeyValuePair<string, GreetingType>> _menuItems;
+		private Dictionary<string,GreetingType> _menuItems;
 
-		public Menu(List<KeyValuePair<string, GreetingType>> menuItems)
+		public Menu(Dictionary<string, GreetingType> menuItems)
 		{
 			_menuItems = menuItems;
 		}
