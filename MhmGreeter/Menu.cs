@@ -50,7 +50,7 @@ namespace MhmGreeter
 
 		public Greeter.Type GetGreetingTypeGivenMenuSelection (string selection)
 		{
-			if (selection == "" || selection == null) {
+			if (string.IsNullOrEmpty (selection)) {
 				return Greeter.Type.EMPTY;
 			}
 

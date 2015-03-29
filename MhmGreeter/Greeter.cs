@@ -20,43 +20,43 @@ namespace MhmGreeter
 			INVALID
 		}
 
-		public static Dictionary<Greeter.Type, string> MenuDescriptions = new Dictionary<Greeter.Type, string> {
-			{ Greeter.Type.CAT, "Cat" },
-			{ Greeter.Type.DOG, "Dog" }, 
-			{ Greeter.Type.ENGLISH, "English speaking person" }, 
-			{ Greeter.Type.FRENCH, "French speaking person" }, 
-			{ Greeter.Type.IMPATIENT, "Impatient person" }, 
-			{ Greeter.Type.MULTILINGUAL, "Multilingual greeting" }, 
-			{ Greeter.Type.RANDOM, "Random greeting" }, 
-			{ Greeter.Type.SPANISH, "Spanish person" }, 
-			{ Greeter.Type.EXIT, "Exit the application" },
+		public static Dictionary<Type, string> MenuDescriptions = new Dictionary<Type, string> {
+			{ Type.CAT, "Cat" },
+			{ Type.DOG, "Dog" }, 
+			{ Type.ENGLISH, "English speaking person" }, 
+			{ Type.FRENCH, "French speaking person" }, 
+			{ Type.IMPATIENT, "Impatient person" }, 
+			{ Type.MULTILINGUAL, "Multilingual greeting" }, 
+			{ Type.RANDOM, "Random greeting" }, 
+			{ Type.SPANISH, "Spanish person" }, 
+			{ Type.EXIT, "Exit the application" },
 		};
 
-		public static Dictionary<Greeter.Type, string> GreetingStrings = new Dictionary<Greeter.Type, string> {
-			{ Greeter.Type.CAT, "Meow." },
-			{ Greeter.Type.DOG, "Bark!" }, 
-			{ Greeter.Type.ENGLISH, "Hello" }, 
-			{ Greeter.Type.FRENCH, "Bonjour" }, 
-			{ Greeter.Type.SPANISH, "Hola" }, 
-			{ Greeter.Type.EMPTY, "" },
-			{ Greeter.Type.INVALID, "I'm sorry - you have made an invalid selection" },
-			{ Greeter.Type.EXIT, "Goodbye!" },
+		public static Dictionary<Type, string> GreetingStrings = new Dictionary<Type, string> {
+			{ Type.CAT, "Meow." },
+			{ Type.DOG, "Bark!" }, 
+			{ Type.ENGLISH, "Hello" }, 
+			{ Type.FRENCH, "Bonjour" }, 
+			{ Type.SPANISH, "Hola" }, 
+			{ Type.EMPTY, "" },
+			{ Type.INVALID, "I'm sorry - you have made an invalid selection" },
+			{ Type.EXIT, "Goodbye!" },
 		};
 
-		static public void PrintGreeting (Greeter.Type greetingSelection)
+		static public void PrintGreeting (Type greetingSelection)
 		{
 			switch (greetingSelection) { 
-			case Greeter.Type.RANDOM: 
+			case Type.RANDOM: 
 				printRandomGreeting ();
 				break;
-			case Greeter.Type.IMPATIENT:
+			case Type.IMPATIENT:
 				printImpatientGreeting ();
 				break;
-			case Greeter.Type.MULTILINGUAL:
+			case Type.MULTILINGUAL:
 				printMultilingualGreeting ();
 				break;
 			default:
-				Console.WriteLine (Greeter.GreetingStrings [greetingSelection]);
+				Console.WriteLine (GreetingStrings [greetingSelection]);
 				Console.WriteLine ();
 				break;
 			}
@@ -64,12 +64,12 @@ namespace MhmGreeter
 
 		static void printRandomGreeting ()
 		{
-			var AvailableRandomGreetings = new List<Greeter.Type> {
-				Greeter.Type.CAT,
-				Greeter.Type.DOG,
-				Greeter.Type.ENGLISH,
-				Greeter.Type.FRENCH,
-				Greeter.Type.SPANISH
+			var AvailableRandomGreetings = new List<Type> {
+				Type.CAT,
+				Type.DOG,
+				Type.ENGLISH,
+				Type.FRENCH,
+				Type.SPANISH
 			};
 
 			var rand = new Random ();
@@ -79,10 +79,10 @@ namespace MhmGreeter
 
 		static void printMultilingualGreeting ()
 		{			
-			var AvailableMultilingualGreetings = new List<Greeter.Type> {
-				Greeter.Type.ENGLISH,
-				Greeter.Type.FRENCH,
-				Greeter.Type.SPANISH
+			var AvailableMultilingualGreetings = new List<Type> {
+				Type.ENGLISH,
+				Type.FRENCH,
+				Type.SPANISH
 			};
 
 			var rand = new Random ();
