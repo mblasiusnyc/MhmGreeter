@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace MhmGreeter
 {
 	class MainClass
@@ -27,15 +26,17 @@ namespace MhmGreeter
 					break;
 				}
 
-				if (greetingSelection == GreetingType.INVALID) {
-					menu.PrintInvalidSelectionWarningWithPrompt ();
-				} else {
-					Console.WriteLine("You selected: " + greetingSelection);
-					menu.PrintLoopingMenuWithPrompt ();
-				}
+				PrintGreeting (greetingSelection);
+
+				menu.PrintLoopingMenuWithPrompt ();
 			}
 
 			Console.WriteLine ("Goodbye!");
+		}
+
+		static void PrintGreeting (GreetingType greetingSelection)
+		{
+			Console.WriteLine ("You selected: " + greetingSelection);
 		}
 	}
 }
