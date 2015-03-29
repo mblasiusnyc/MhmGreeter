@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MhmGreeter
 {
-	static public class Greeter
+	static class Greeter
 	{
 		public enum Type
 		{
