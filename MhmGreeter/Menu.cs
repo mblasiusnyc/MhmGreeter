@@ -21,13 +21,8 @@ namespace MhmGreeter
 		{
 			foreach(var menuItem in _menuItems) 
 			{
-				Console.WriteLine(menuItem.Key);
+				Console.WriteLine(" " + menuItem.Key + ") ");
 			}
-		}
-
-		public void PrintExitOption ()
-		{
-			Console.WriteLine ("x) Exit the application");
 		}
 
 		public void PrintPrompt ()
@@ -46,13 +41,6 @@ namespace MhmGreeter
 		{
 			Console.WriteLine ("Would you like to select another greeting? ('X' to exit):");
 			PrintGreetingMenu ();
-			PrintExitOption ();
-			PrintPrompt ();
-		}
-
-		public void PrintInvalidSelectionWarningWithPrompt ()
-		{
-			Console.WriteLine ("I'm sorry, that selection is invalid. Please select a _real_ greeting");
 			PrintPrompt ();
 		}
 
