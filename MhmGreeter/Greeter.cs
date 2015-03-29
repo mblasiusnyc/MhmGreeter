@@ -43,7 +43,7 @@ namespace MhmGreeter
 			{ Type.EXIT, "Goodbye!" },
 		};
 
-		static public void PrintGreeting (Type greetingSelection)
+		public static void PrintGreeting (Type greetingSelection)
 		{
 			switch (greetingSelection) { 
 			case Type.RANDOM: 
@@ -93,18 +93,18 @@ namespace MhmGreeter
 
 		static void printImpatientGreeting ()
 		{
-			numTimesImpatientGreeterBothered++;
-			if ((numTimesImpatientGreeterBothered % 3) != 0) {
-				Console.WriteLine (patientGreeting);
+			_numTimesImpatientGreeterBothered++;
+			if ((_numTimesImpatientGreeterBothered % 3) != 0) {
+				Console.WriteLine (_patientGreeting);
 				Console.WriteLine ();
 			} else {
-				Console.WriteLine (impatientGreeting);
+				Console.WriteLine (_impatientGreeting);
 				Console.WriteLine ();
 			}
 		}
 
-		static int numTimesImpatientGreeterBothered = 0;
-		static string patientGreeting = "Oh, hello.";
-		static string impatientGreeting = "Not now! I'm busy.";
+		static int _numTimesImpatientGreeterBothered = 0;
+		const string _patientGreeting = "Oh, hello.";
+		const string _impatientGreeting = "Not now! I'm busy.";
 	}
 }

@@ -5,7 +5,7 @@ namespace MhmGreeter
 {
 	class Menu
 	{
-		private Dictionary<string, Greeter.Type> _menuItems;
+		readonly Dictionary<string, Greeter.Type> _menuItems;
 
 		public Menu (Dictionary<string, Greeter.Type> menuItemsConfiguration)
 		{
@@ -29,7 +29,7 @@ namespace MhmGreeter
 			Console.WriteLine (" " + menuItem.Key + ") " + Greeter.MenuDescriptions [menuItem.Value]);
 		}
 
-		public void PrintPrompt ()
+		void PrintPrompt ()
 		{
 			Console.Write (">> ");
 		}
