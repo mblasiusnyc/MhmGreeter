@@ -20,7 +20,7 @@ namespace MhmGreeter
 			INVALID
 		}
 
-		public static Dictionary<Type, string> MenuDescriptions = new Dictionary<Type, string> {
+		public static readonly Dictionary<Type, string> MenuDescriptions = new Dictionary<Type, string> {
 			{ Type.CAT, "Cat" },
 			{ Type.DOG, "Dog" }, 
 			{ Type.ENGLISH, "English speaking person" }, 
@@ -32,7 +32,7 @@ namespace MhmGreeter
 			{ Type.EXIT, "Exit the application" },
 		};
 
-		public static Dictionary<Type, string> GreetingStrings = new Dictionary<Type, string> {
+		public static readonly Dictionary<Type, string> GreetingStrings = new Dictionary<Type, string> {
 			{ Type.CAT, "Meow." },
 			{ Type.DOG, "Bark!" }, 
 			{ Type.ENGLISH, "Hello" }, 
