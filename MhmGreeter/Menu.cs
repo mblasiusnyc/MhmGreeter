@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace MhmGreeter
@@ -20,7 +19,7 @@ namespace MhmGreeter
 
 		public void PrintGreetingMenu ()
 		{
-			foreach (var menuItem in _menuItems.OrderBy(x => x.Key)) {
+			foreach (var menuItem in _menuItems) {
 				PrintMenuItem (menuItem);
 			}
 		}
