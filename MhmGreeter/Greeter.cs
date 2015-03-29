@@ -22,6 +22,7 @@ namespace MhmGreeter
 				break;
 			default:
 				Console.WriteLine (Greeting.DefaultGreetings [greetingSelection]);
+				Console.WriteLine ();
 				break;
 			}
 
@@ -39,8 +40,7 @@ namespace MhmGreeter
 
 			var rand = new Random ();
 			var greetingKey = AvailableRandomGreetings [rand.Next (AvailableRandomGreetings.Count)];
-
-			Console.WriteLine (Greeting.DefaultGreetings [greetingKey]);
+			PrintGreeting (greetingKey);
 		}
 
 		static void printMultilingualGreeting ()
@@ -54,7 +54,7 @@ namespace MhmGreeter
 			var rand = new Random ();
 			var greetingKey = AvailableMultilingualGreetings [rand.Next (AvailableMultilingualGreetings.Count)];
 
-			Console.WriteLine (Greeting.DefaultGreetings [greetingKey]);
+			PrintGreeting (greetingKey);
 		}
 
 		static void printImpatientGreeting ()
@@ -64,8 +64,10 @@ namespace MhmGreeter
 			numTimesImpatientGreeterBothered++;
 			if ((numTimesImpatientGreeterBothered % 3) != 0) {
 				Console.WriteLine (patientGreeting);
+				Console.WriteLine ();
 			} else {
 				Console.WriteLine (impatientGreeting);
+				Console.WriteLine ();
 			}
 		}
 	}

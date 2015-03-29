@@ -37,6 +37,13 @@ namespace MhmGreeter
 			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("42"));
 		}
 
+		[Test ()]
+		public void EmptyMenuSelectionsShouldReturnGreetingTypeEmpty ()
+		{
+			Assert.AreEqual (Greeting.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (""));
+			Assert.AreEqual (Greeting.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (null));
+		}
+
 	}
 }
 

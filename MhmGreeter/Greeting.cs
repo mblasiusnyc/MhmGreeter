@@ -38,6 +38,7 @@ namespace MhmGreeter
 			{ Greeting.Type.ENGLISH, "Hello" }, 
 			{ Greeting.Type.FRENCH, "Bonjour" }, 
 			{ Greeting.Type.SPANISH, "Hola" }, 
+			{ Greeting.Type.EMPTY, "" },
 			{ Greeting.Type.INVALID, "I'm sorry - you have made an invalid selection" },
 		};
 	}
