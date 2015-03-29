@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace MhmGreeter
@@ -7,7 +8,7 @@ namespace MhmGreeter
 	{
 		private MenuItemsConfiguration _menuItems;
 
-		public Menu(MenuItemsConfiguration menuItems)
+		public Menu (MenuItemsConfiguration menuItems)
 		{
 			_menuItems = menuItems;
 		}
@@ -19,10 +20,14 @@ namespace MhmGreeter
 
 		public void PrintGreetingMenu ()
 		{
-			foreach(var menuItem in _menuItems) 
-			{
-				Console.WriteLine(" " + menuItem.Key + ") " + Greeting.MenuDescriptions[menuItem.Value]);
+			foreach (var menuItem in _menuItems.OrderBy(x => x.Key)) {
+				PrintMenuItem (menuItem);
 			}
+		}
+
+		static void PrintMenuItem (KeyValuePair<string, Greeting.Type> menuItem)
+		{
+			Console.WriteLine (" " + menuItem.Key + ") " + Greeting.MenuDescriptions [menuItem.Value]);
 		}
 
 		public void PrintPrompt ()
@@ -44,12 +49,15 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public Greeting.Type GetGreetingTypeGivenMenuSelection (string key)
+		public Greeting.Type GetGreetingTypeGivenMenuSelection (string selection)
 		{
-			if (_menuItems.ContainsKey (key)) {
-				return _menuItems [key];
+			if (selection == "" || selection == null) {
+				return Greeting.Type.EMPTY;
 			}
-			else {
+
+			if (_menuItems.ContainsKey (selection)) {
+				return _menuItems [selection];
+			} else {
 				return Greeting.Type.INVALID;
 			}
 		}

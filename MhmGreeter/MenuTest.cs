@@ -21,15 +21,17 @@ namespace MhmGreeter
 			menu = new Menu (menuConfig);
 		}
 
-		[Test()]
-		public void ValidMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes () {
+		[Test ()]
+		public void ValidMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes ()
+		{
 			Assert.AreEqual (Greeting.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("a"));
 			Assert.AreEqual (Greeting.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("b"));
 			Assert.AreEqual (Greeting.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("c"));
 		}
 
-		[Test()]
-		public void InvalidMenuSelectionsShouldReturnGreetingTypeInvalid () {
+		[Test ()]
+		public void InvalidMenuSelectionsShouldReturnGreetingTypeInvalid ()
+		{
 			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("r"));
 			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("not a valid key"));
 			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("42"));

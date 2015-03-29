@@ -9,9 +9,13 @@ namespace MhmGreeter
 		{
 			var menuConfig = new MenuItemsConfiguration () {
 				{ "a", Greeting.Type.ENGLISH },
-				{ "b", Greeting.Type.FRENCH },
-				{ "c", Greeting.Type.DOG },
-				{ "x", Greeting.Type.EXIT } 
+				{ "b", Greeting.Type.DOG },
+				{ "c", Greeting.Type.CAT },
+				{ "d", Greeting.Type.FRENCH },
+				{ "e", Greeting.Type.MULTILINGUAL },
+				{ "f", Greeting.Type.RANDOM },
+				{ "g", Greeting.Type.IMPATIENT },
+				{ "x", Greeting.Type.EXIT }
 			};
 			Menu menu = new Menu (menuConfig);
 
@@ -36,7 +40,7 @@ namespace MhmGreeter
 
 		static void PrintGreeting (Greeting.Type greetingSelection)
 		{
-			Console.WriteLine ("You selected: " + greetingSelection);
+			Console.WriteLine (Greeting.Greetings[greetingSelection]);
 		}
 	}
 }

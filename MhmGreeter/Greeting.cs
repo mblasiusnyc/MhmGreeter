@@ -15,6 +15,7 @@ namespace MhmGreeter
 			MULTILINGUAL,
 			RANDOM,
 			EXIT,
+			EMPTY,
 			INVALID
 		}
 
@@ -27,7 +28,8 @@ namespace MhmGreeter
 			{ Greeting.Type.MULTILINGUAL, "Multilingual greeting" }, 
 			{ Greeting.Type.RANDOM, "Random greeting" }, 
 			{ Greeting.Type.EXIT, "Exit the application" },
-			{ Greeting.Type.INVALID, "Invalid Selection" }
+			{ Greeting.Type.INVALID, "Invalid Selection" },
+			{ Greeting.Type.EMPTY, "No item selected" }
 		};
 
 		public static Dictionary<Greeting.Type, string> Greetings = new Dictionary<Greeting.Type, string> {
@@ -39,7 +41,8 @@ namespace MhmGreeter
 			{ Greeting.Type.MULTILINGUAL, "" }, 
 			{ Greeting.Type.RANDOM, "" }, 
 			{ Greeting.Type.EXIT, "" },
-			{ Greeting.Type.INVALID, "I'm sorry - you have made an invalid selection" }
+			{ Greeting.Type.INVALID, "I'm sorry - you have made an invalid selection" },
+			{ Greeting.Type.EMPTY, ""}
 		};
 	}
 }
