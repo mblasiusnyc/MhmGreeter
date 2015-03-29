@@ -56,16 +56,14 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public GreetingType ReadGreetingSelection ()
+		public GreetingType GetGreetingTypeGivenMenuSelection (string key)
 		{
-			var key = Console.ReadLine ();
-
 			if (_menuItems.ContainsKey (key)) {
 				return _menuItems [key];
-			} else {
+			}
+			else {
 				return GreetingType.INVALID;
 			}
-
 		}
 	}
 }
