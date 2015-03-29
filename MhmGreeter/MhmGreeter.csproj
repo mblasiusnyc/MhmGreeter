@@ -39,12 +39,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="MenuTest.cs" />
-    <Compile Include="Greeting.cs" />
     <Compile Include="Greeter.cs" />
+    <Compile Include="Test\MenuTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
   </ItemGroup>
 </Project>
