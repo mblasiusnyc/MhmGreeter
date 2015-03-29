@@ -22,6 +22,7 @@ namespace MhmGreeter
 			menu.PrintWelcomeScreen ();
 			menu.PrintInitialMenuWithPrompt ();
 
+			Greeter greeter = new Greeter ();
 			while (true) {
 				var userInput = Console.ReadLine ();
 				var greetingSelection = menu.GetGreetingTypeGivenMenuSelection (userInput);
@@ -30,7 +31,7 @@ namespace MhmGreeter
 					break;
 				}
 
-				PrintGreeting (greetingSelection);
+				greeter.PrintGreeting (greetingSelection);
 
 				menu.PrintLoopingMenuWithPrompt ();
 			}
@@ -38,9 +39,5 @@ namespace MhmGreeter
 			Console.WriteLine ("Goodbye!");
 		}
 
-		static void PrintGreeting (Greeting.Type greetingSelection)
-		{
-			Console.WriteLine (Greeting.Greetings[greetingSelection]);
-		}
 	}
 }
