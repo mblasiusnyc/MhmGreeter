@@ -7,8 +7,8 @@ namespace MhmGreeter
 	static public class Greeter
 	{
 		static int numTimesImpatientGreeterBothered = 0;
-		string patientGreeting = "Oh, hello.";
-		string impatientGreeting = "Not now! I'm busy.";
+		static string patientGreeting = "Oh, hello.";
+		static string impatientGreeting = "Not now! I'm busy.";
 
 		static public void PrintGreeting (Greeting.Type greetingSelection)
 		{
