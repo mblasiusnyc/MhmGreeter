@@ -8,10 +8,10 @@ namespace MhmGreeter
 		public static void Main (string[] args)
 		{
 			var menuConfig = new MenuItemsConfiguration () {
-				{ "a", GreetingType.ENGLISH },
-				{ "b", GreetingType.FRENCH },
-				{ "c", GreetingType.DOG },
-				{ "x", GreetingType.EXIT } 
+				{ "a", Greeting.Type.ENGLISH },
+				{ "b", Greeting.Type.FRENCH },
+				{ "c", Greeting.Type.DOG },
+				{ "x", Greeting.Type.EXIT } 
 			};
 			Menu menu = new Menu (menuConfig);
 
@@ -22,7 +22,7 @@ namespace MhmGreeter
 				var userInput = Console.ReadLine ();
 				var greetingSelection = menu.GetGreetingTypeGivenMenuSelection (userInput);
 
-				if (greetingSelection == GreetingType.EXIT) {
+				if (greetingSelection == Greeting.Type.EXIT) {
 					break;
 				}
 
@@ -34,7 +34,7 @@ namespace MhmGreeter
 			Console.WriteLine ("Goodbye!");
 		}
 
-		static void PrintGreeting (GreetingType greetingSelection)
+		static void PrintGreeting (Greeting.Type greetingSelection)
 		{
 			Console.WriteLine ("You selected: " + greetingSelection);
 		}

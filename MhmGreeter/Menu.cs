@@ -21,7 +21,7 @@ namespace MhmGreeter
 		{
 			foreach(var menuItem in _menuItems) 
 			{
-				Console.WriteLine(" " + menuItem.Key + ") ");
+				Console.WriteLine(" " + menuItem.Key + ") " + Greeting.MenuDescriptions[menuItem.Value]);
 			}
 		}
 
@@ -44,13 +44,13 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public GreetingType GetGreetingTypeGivenMenuSelection (string key)
+		public Greeting.Type GetGreetingTypeGivenMenuSelection (string key)
 		{
 			if (_menuItems.ContainsKey (key)) {
 				return _menuItems [key];
 			}
 			else {
-				return GreetingType.INVALID;
+				return Greeting.Type.INVALID;
 			}
 		}
 	}

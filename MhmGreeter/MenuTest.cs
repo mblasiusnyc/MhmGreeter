@@ -4,8 +4,6 @@ using NUnit.Framework;
 
 namespace MhmGreeter
 {
-	using MenuConfig = Dictionary<string, GreetingType>;
-
 	[TestFixture ()]
 	public class MenuTest
 	{
@@ -15,9 +13,9 @@ namespace MhmGreeter
 		public void MenuCreation ()
 		{
 			var menuConfig = new MenuItemsConfiguration () {
-				{ "a", GreetingType.ENGLISH },
-				{ "b", GreetingType.DOG },
-				{ "c", GreetingType.FRENCH },
+				{ "a", Greeting.Type.ENGLISH },
+				{ "b", Greeting.Type.DOG },
+				{ "c", Greeting.Type.FRENCH },
 			};
 
 			menu = new Menu (menuConfig);
@@ -25,16 +23,16 @@ namespace MhmGreeter
 
 		[Test()]
 		public void ValidMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes () {
-			Assert.AreEqual (GreetingType.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("a"));
-			Assert.AreEqual (GreetingType.DOG, menu.GetGreetingTypeGivenMenuSelection ("b"));
-			Assert.AreEqual (GreetingType.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("c"));
+			Assert.AreEqual (Greeting.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("a"));
+			Assert.AreEqual (Greeting.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("b"));
+			Assert.AreEqual (Greeting.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("c"));
 		}
 
 		[Test()]
 		public void InvalidMenuSelectionsShouldReturnGreetingTypeInvalid () {
-			Assert.AreEqual (GreetingType.INVALID, menu.GetGreetingTypeGivenMenuSelection ("r"));
-			Assert.AreEqual (GreetingType.INVALID, menu.GetGreetingTypeGivenMenuSelection ("not a valid key"));
-			Assert.AreEqual (GreetingType.INVALID, menu.GetGreetingTypeGivenMenuSelection ("42"));
+			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("r"));
+			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("not a valid key"));
+			Assert.AreEqual (Greeting.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("42"));
 		}
 
 	}
