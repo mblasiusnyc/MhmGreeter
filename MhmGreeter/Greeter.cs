@@ -4,11 +4,11 @@ using System.Collections.Generic;
 namespace MhmGreeter
 {
 
-	public class Greeter
+	static public class Greeter
 	{
-		int numTimesImpatientGreeterBothered = 0;
+		static int numTimesImpatientGreeterBothered = 0;
 
-		public void PrintGreeting (Greeting.Type greetingSelection)
+		static public void PrintGreeting (Greeting.Type greetingSelection)
 		{
 			switch (greetingSelection) { 
 			case Greeting.Type.RANDOM: 
@@ -27,7 +27,7 @@ namespace MhmGreeter
 
 		}
 
-		void printRandomGreeting ()
+		static void printRandomGreeting ()
 		{
 			var AvailableRandomGreetings = new List<Greeting.Type> {
 				Greeting.Type.CAT,
@@ -43,7 +43,7 @@ namespace MhmGreeter
 			Console.WriteLine (Greeting.Greetings [greetingKey]);
 		}
 
-		void printMultilingualGreeting ()
+		static void printMultilingualGreeting ()
 		{			
 			var AvailableMultilingualGreetings = new List<Greeting.Type> {
 				Greeting.Type.ENGLISH,
@@ -57,7 +57,7 @@ namespace MhmGreeter
 			Console.WriteLine (Greeting.Greetings [greetingKey]);
 		}
 
-		void printImpatientGreeting ()
+		static void printImpatientGreeting ()
 		{
 			var patientGreeting = "Oh, hello.";
 			var impatientGreeting = "Not now! I'm busy.";

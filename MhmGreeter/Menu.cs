@@ -5,11 +5,11 @@ namespace MhmGreeter
 {
 	class Menu
 	{
-		private MenuItemsConfiguration _menuItems;
+		private Dictionary<string, Greeting.Type> _menuItems;
 
-		public Menu (MenuItemsConfiguration menuItems)
+		public Menu (Dictionary<string, Greeting.Type> menuItemsConfiguration)
 		{
-			_menuItems = menuItems;
+			_menuItems = menuItemsConfiguration;
 		}
 
 		public void PrintWelcomeScreen ()
@@ -24,7 +24,7 @@ namespace MhmGreeter
 			}
 		}
 
-		static void PrintMenuItem (KeyValuePair<string, Greeting.Type> menuItem)
+		void PrintMenuItem (KeyValuePair<string, Greeting.Type> menuItem)
 		{
 			Console.WriteLine (" " + menuItem.Key + ") " + Greeting.MenuDescriptions [menuItem.Value]);
 		}

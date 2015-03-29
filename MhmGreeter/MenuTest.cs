@@ -12,7 +12,7 @@ namespace MhmGreeter
 		[SetUp ()]
 		public void MenuCreation ()
 		{
-			var menuConfig = new MenuItemsConfiguration () {
+			var menuConfig = new Dictionary<string, Greeting.Type> () {
 				{ "a", Greeting.Type.ENGLISH },
 				{ "b", Greeting.Type.DOG },
 				{ "c", Greeting.Type.FRENCH },

@@ -7,7 +7,7 @@ namespace MhmGreeter
 	{
 		public static void Main (string[] args)
 		{
-			var menuConfig = new MenuItemsConfiguration () {
+			var menuConfig = new Dictionary<string, Greeting.Type> () {
 				{ "a", Greeting.Type.ENGLISH },
 				{ "b", Greeting.Type.DOG },
 				{ "c", Greeting.Type.CAT },
@@ -22,7 +22,6 @@ namespace MhmGreeter
 			menu.PrintWelcomeScreen ();
 			menu.PrintInitialMenuWithPrompt ();
 
-			Greeter greeter = new Greeter ();
 			while (true) {
 				var userInput = Console.ReadLine ();
 				var greetingSelection = menu.GetGreetingTypeGivenMenuSelection (userInput);
@@ -31,7 +30,7 @@ namespace MhmGreeter
 					break;
 				}
 
-				greeter.PrintGreeting (greetingSelection);
+				Greeter.PrintGreeting (greetingSelection);
 
 				menu.PrintLoopingMenuWithPrompt ();
 			}
