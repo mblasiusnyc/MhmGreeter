@@ -50,7 +50,6 @@ namespace MhmGreeter.Test
 			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (""));
 			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (null));
 		}
-
 	}
 }
 
