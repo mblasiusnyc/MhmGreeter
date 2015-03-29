@@ -23,32 +23,32 @@ namespace MhmGreeter.Test
 		[Test ()]
 		public void ValidMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes ()
 		{
-			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("a"));
-			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("b"));
-			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("c"));
+			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeForKey ("a"));
+			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeForKey ("b"));
+			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeForKey ("c"));
 		}
 
 		[Test ()]
 		public void ValidUpperCaseMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes ()
 		{
-			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("A"));
-			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("B"));
-			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("C"));
+			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeForKey ("A"));
+			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeForKey ("B"));
+			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeForKey ("C"));
 		}
 
 		[Test ()]
 		public void InvalidMenuSelectionsShouldReturnGreetingTypeInvalid ()
 		{
-			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("r"));
-			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("not a valid key"));
-			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeGivenMenuSelection ("42"));
+			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeForKey ("r"));
+			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeForKey ("not a valid key"));
+			Assert.AreEqual (Greeter.Type.INVALID, menu.GetGreetingTypeForKey ("42"));
 		}
 
 		[Test ()]
 		public void EmptyMenuSelectionsShouldReturnGreetingTypeEmpty ()
 		{
-			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (""));
-			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeGivenMenuSelection (null));
+			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeForKey (""));
+			Assert.AreEqual (Greeter.Type.EMPTY, menu.GetGreetingTypeForKey (null));
 		}
 	}
 }
