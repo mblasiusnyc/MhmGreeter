@@ -24,8 +24,11 @@ namespace MhmGreeter.Test
 		public void ValidMenuSelectionsShouldReturnCorrectEnumeratedGreetingTypes ()
 		{
 			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("a"));
+			Assert.AreEqual (Greeter.Type.ENGLISH, menu.GetGreetingTypeGivenMenuSelection ("A"));
 			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("b"));
+			Assert.AreEqual (Greeter.Type.DOG, menu.GetGreetingTypeGivenMenuSelection ("B"));
 			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("c"));
+			Assert.AreEqual (Greeter.Type.FRENCH, menu.GetGreetingTypeGivenMenuSelection ("C"));
 		}
 
 		[Test ()]

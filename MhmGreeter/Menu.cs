@@ -54,6 +54,7 @@ namespace MhmGreeter
 				return Greeter.Type.EMPTY;
 			}
 
+			selection = selection.ToLower ();
 			if (_menuItems.ContainsKey (selection)) {
 				return _menuItems [selection];
 			} else {
