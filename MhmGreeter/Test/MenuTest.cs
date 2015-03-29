@@ -9,7 +9,7 @@ namespace MhmGreeter.Test
 		Menu menu;
 
 		[SetUp ()]
-		public void MenuCreation ()
+		public void CreateTestMenu ()
 		{
 			var menuConfig = new Dictionary<string, Greeter.Type> () {
 				{ "a", Greeter.Type.ENGLISH },

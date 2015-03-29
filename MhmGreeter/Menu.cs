@@ -48,15 +48,15 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public Greeter.Type GetGreetingTypeGivenMenuSelection (string selection)
+		public Greeter.Type GetGreetingTypeForKey (string key)
 		{
-			if (string.IsNullOrEmpty (selection)) {
+			if (string.IsNullOrEmpty (key)) {
 				return Greeter.Type.EMPTY;
 			}
 
-			selection = selection.ToLower ();
-			if (_menuItems.ContainsKey (selection)) {
-				return _menuItems [selection];
+			key = key.ToLower ();
+			if (_menuItems.ContainsKey (key)) {
+				return _menuItems [key];
 			} else {
 				return Greeter.Type.INVALID;
 			}
