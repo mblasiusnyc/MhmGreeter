@@ -7,15 +7,15 @@ namespace MhmGreeter
 	{
 		public static void Main (string[] args)
 		{
-			var menuConfig = new Dictionary<string, Greeting.Type> () {
-				{ "a", Greeting.Type.ENGLISH },
-				{ "b", Greeting.Type.DOG },
-				{ "c", Greeting.Type.CAT },
-				{ "d", Greeting.Type.FRENCH },
-				{ "e", Greeting.Type.MULTILINGUAL },
-				{ "f", Greeting.Type.RANDOM },
-				{ "g", Greeting.Type.IMPATIENT },
-				{ "x", Greeting.Type.EXIT }
+			var menuConfig = new Dictionary<string, Greeter.Type> () {
+				{ "a", Greeter.Type.ENGLISH },
+				{ "b", Greeter.Type.DOG },
+				{ "c", Greeter.Type.CAT },
+				{ "d", Greeter.Type.FRENCH },
+				{ "e", Greeter.Type.MULTILINGUAL },
+				{ "f", Greeter.Type.RANDOM },
+				{ "g", Greeter.Type.IMPATIENT },
+				{ "x", Greeter.Type.EXIT }
 			};
 			Menu menu = new Menu (menuConfig);
 
@@ -26,7 +26,7 @@ namespace MhmGreeter
 				var userInput = Console.ReadLine ();
 
 				var greetingSelection = menu.GetGreetingTypeGivenMenuSelection (userInput);
-				if (greetingSelection == Greeting.Type.EXIT) {
+				if (greetingSelection == Greeter.Type.EXIT) {
 					break;
 				}
 				Greeter.PrintGreeting (greetingSelection);

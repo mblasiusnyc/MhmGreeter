@@ -5,9 +5,9 @@ namespace MhmGreeter
 {
 	class Menu
 	{
-		private Dictionary<string, Greeting.Type> _menuItems;
+		private Dictionary<string, Greeter.Type> _menuItems;
 
-		public Menu (Dictionary<string, Greeting.Type> menuItemsConfiguration)
+		public Menu (Dictionary<string, Greeter.Type> menuItemsConfiguration)
 		{
 			_menuItems = menuItemsConfiguration;
 		}
@@ -24,9 +24,9 @@ namespace MhmGreeter
 			}
 		}
 
-		void PrintMenuItem (KeyValuePair<string, Greeting.Type> menuItem)
+		void PrintMenuItem (KeyValuePair<string, Greeter.Type> menuItem)
 		{
-			Console.WriteLine (" " + menuItem.Key + ") " + Greeting.MenuDescriptions [menuItem.Value]);
+			Console.WriteLine (" " + menuItem.Key + ") " + Greeter.MenuDescriptions [menuItem.Value]);
 		}
 
 		public void PrintPrompt ()
@@ -48,16 +48,16 @@ namespace MhmGreeter
 			PrintPrompt ();
 		}
 
-		public Greeting.Type GetGreetingTypeGivenMenuSelection (string selection)
+		public Greeter.Type GetGreetingTypeGivenMenuSelection (string selection)
 		{
 			if (selection == "" || selection == null) {
-				return Greeting.Type.EMPTY;
+				return Greeter.Type.EMPTY;
 			}
 
 			if (_menuItems.ContainsKey (selection)) {
 				return _menuItems [selection];
 			} else {
-				return Greeting.Type.INVALID;
+				return Greeter.Type.INVALID;
 			}
 		}
 	}
