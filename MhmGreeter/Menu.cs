@@ -34,14 +34,14 @@ namespace MhmGreeter
 			Console.Write (">> ");
 		}
 
-		public void PrintInitialMenuWithPrompt ()
+		public void PrintInitialPromptWithMenu ()
 		{
 			Console.WriteLine ("Please select one of the following Greetings:");
 			PrintGreetingMenu ();
 			PrintPrompt ();
 		}
 
-		public void PrintLoopingMenuWithPrompt ()
+		public void PrintLoopingPromptWithMenu ()
 		{
 			Console.WriteLine ("Would you like to select another greeting? ('X' to exit):");
 			PrintGreetingMenu ();

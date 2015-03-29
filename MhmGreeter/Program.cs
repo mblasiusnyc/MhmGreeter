@@ -20,7 +20,7 @@ namespace MhmGreeter
 			Menu menu = new Menu (menuConfig);
 
 			menu.PrintWelcomeScreen ();
-			menu.PrintInitialMenuWithPrompt ();
+			menu.PrintInitialPromptWithMenu ();
 
 			while (true) {
 				var userInput = Console.ReadLine ();
@@ -31,7 +31,7 @@ namespace MhmGreeter
 				}
 				Greeter.PrintGreeting (greetingSelection);
 
-				menu.PrintLoopingMenuWithPrompt ();
+				menu.PrintLoopingPromptWithMenu ();
 			}
 			Console.WriteLine ("Goodbye!");
 		}
