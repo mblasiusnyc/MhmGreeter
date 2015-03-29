@@ -26,7 +26,7 @@ namespace MhmGreeter
 				var userInput = Console.ReadLine ();
 
 				var greetingSelection = menu.GetGreetingTypeGivenMenuSelection (userInput);
-				Greeter.GetGreeting (greetingSelection);
+				Greeter.PrintGreeting (greetingSelection);
 				if (greetingSelection == Greeter.Type.EXIT) {
 					break;
 				}
