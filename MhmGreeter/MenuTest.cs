@@ -14,7 +14,7 @@ namespace MhmGreeter
 		[SetUp ()]
 		public void MenuCreation ()
 		{
-			var menuConfig = new MenuConfig () {
+			var menuConfig = new MenuItemsConfiguration () {
 				{ "a", GreetingType.ENGLISH },
 				{ "b", GreetingType.DOG },
 				{ "c", GreetingType.FRENCH },

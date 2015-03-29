@@ -4,20 +4,18 @@ using System.Collections.Generic;
 
 namespace MhmGreeter
 {
-	using MenuConfig = Dictionary<string, GreetingType>;
-
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
-			var menuConfig = new MenuConfig () {
+			var menuConfig = new MenuItemsConfiguration () {
 				{ "a", GreetingType.ENGLISH },
 				{ "b", GreetingType.FRENCH },
 				{ "c", GreetingType.DOG },
 				{ "x", GreetingType.EXIT } 
 			};
-
 			Menu menu = new Menu (menuConfig);
+
 			menu.PrintWelcomeScreen ();
 			menu.PrintInitialMenuWithPrompt ();
 
