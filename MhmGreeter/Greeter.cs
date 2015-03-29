@@ -33,7 +33,7 @@ namespace MhmGreeter
 			{ Greeter.Type.EXIT, "Exit the application" },
 		};
 
-		public static Dictionary<Greeter.Type, string> DefaultGreetings = new Dictionary<Greeter.Type, string> {
+		public static Dictionary<Greeter.Type, string> GreetingStrings = new Dictionary<Greeter.Type, string> {
 			{ Greeter.Type.CAT, "Meow." },
 			{ Greeter.Type.DOG, "Bark!" }, 
 			{ Greeter.Type.ENGLISH, "Hello" }, 
@@ -41,6 +41,7 @@ namespace MhmGreeter
 			{ Greeter.Type.SPANISH, "Hola" }, 
 			{ Greeter.Type.EMPTY, "" },
 			{ Greeter.Type.INVALID, "I'm sorry - you have made an invalid selection" },
+			{ Greeter.Type.EXIT, "Goodbye!" },
 		};
 
 		static public void PrintGreeting (Greeter.Type greetingSelection)
@@ -56,7 +57,7 @@ namespace MhmGreeter
 				printMultilingualGreeting ();
 				break;
 			default:
-				Console.WriteLine (Greeter.DefaultGreetings [greetingSelection]);
+				Console.WriteLine (Greeter.GreetingStrings [greetingSelection]);
 				Console.WriteLine ();
 				break;
 			}
