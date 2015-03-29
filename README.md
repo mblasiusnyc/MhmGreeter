@@ -11,36 +11,42 @@ Example session:
 
 ```
 $ ./MhmGreeter
-
 Welcome to MhmGreeter!
-
-Please select a greeting:
- a) English speaking
+Please select one of the following Greetings:
+ a) English speaking person
  b) Dog
  c) Cat
- d) French
- e) Multilingual
- f) Random
- g) Impatient
-
->> d
-
-Bonjour!
-
-Would you like to choose another greeting? (select 'x' to exit the application):
- a) English speaking
- b) Dog
- c) Cat
- d) French
- e) Multilingual
- f) Random
- g) Impatient
+ d) French speaking person
+ e) Multilingual greeting
+ f) Random greeting
+ g) Impatient person
  x) Exit the application
+>> a
+Hello
 
+Would you like to select another greeting? ('X' to exit):
+ a) English speaking person
+ b) Dog
+ c) Cat
+ d) French speaking person
+ e) Multilingual greeting
+ f) Random greeting
+ g) Impatient person
+ x) Exit the application
+>> b
+Bark!
+
+Would you like to select another greeting? ('X' to exit):
+ a) English speaking person
+ b) Dog
+ c) Cat
+ d) French speaking person
+ e) Multilingual greeting
+ f) Random greeting
+ g) Impatient person
+ x) Exit the application
 >> x
-
 Goodbye!
-
 ```
 
 
