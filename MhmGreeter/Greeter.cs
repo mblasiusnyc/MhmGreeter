@@ -7,6 +7,8 @@ namespace MhmGreeter
 	static public class Greeter
 	{
 		static int numTimesImpatientGreeterBothered = 0;
+		string patientGreeting = "Oh, hello.";
+		string impatientGreeting = "Not now! I'm busy.";
 
 		static public void PrintGreeting (Greeting.Type greetingSelection)
 		{
@@ -25,7 +27,6 @@ namespace MhmGreeter
 				Console.WriteLine ();
 				break;
 			}
-
 		}
 
 		static void printRandomGreeting ()
@@ -59,8 +60,6 @@ namespace MhmGreeter
 
 		static void printImpatientGreeting ()
 		{
-			var patientGreeting = "Oh, hello.";
-			var impatientGreeting = "Not now! I'm busy.";
 			numTimesImpatientGreeterBothered++;
 			if ((numTimesImpatientGreeterBothered % 3) != 0) {
 				Console.WriteLine (patientGreeting);
@@ -72,4 +71,3 @@ namespace MhmGreeter
 		}
 	}
 }
-
