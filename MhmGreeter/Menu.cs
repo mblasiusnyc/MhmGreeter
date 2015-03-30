@@ -12,11 +12,6 @@ namespace MhmGreeter
 			_menuItems = menuItemsConfiguration;
 		}
 
-		public void PrintWelcomeScreen ()
-		{
-			Console.WriteLine ("Welcome to MhmGreeter!");
-		}
-
 		public void PromptUser ()
 		{
 			Console.WriteLine ("Please select one of the following Greetings:");

@@ -18,7 +18,7 @@ namespace MhmGreeter
 				{ "x", Greeter.GreetingType.EXIT }
 			});
 
-			menu.PrintWelcomeScreen ();
+			Console.WriteLine ("Welcome to MhmGreeter!");
 			menu.PromptUser ();
 
 			while (true) {
