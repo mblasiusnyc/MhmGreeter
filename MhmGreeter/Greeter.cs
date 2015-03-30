@@ -5,7 +5,7 @@ namespace MhmGreeter
 {
 	static class Greeter
 	{
-		public enum Type
+		public enum GreetingType
 		{
 			CAT,
 			DOG,
@@ -20,44 +20,44 @@ namespace MhmGreeter
 			INVALID
 		}
 
-		public static readonly Dictionary<Type, string> MenuDescriptions = new Dictionary<Type, string> {
-			{ Type.CAT, "Cat" },
-			{ Type.DOG, "Dog" }, 
-			{ Type.ENGLISH, "English speaking person" }, 
-			{ Type.FRENCH, "French speaking person" }, 
-			{ Type.IMPATIENT, "Impatient person" }, 
-			{ Type.MULTILINGUAL, "Multilingual greeting" }, 
-			{ Type.RANDOM, "Random greeting" }, 
-			{ Type.SPANISH, "Spanish person" }, 
-			{ Type.EMPTY, "Empty user input." },
-			{ Type.EXIT, "Exit the application" },
-			{ Type.INVALID, "Invalid user input." },
+		public static readonly Dictionary<GreetingType, string> MenuDescriptions = new Dictionary<GreetingType, string> {
+			{ GreetingType.CAT, "Cat" },
+			{ GreetingType.DOG, "Dog" }, 
+			{ GreetingType.ENGLISH, "English speaking person" }, 
+			{ GreetingType.FRENCH, "French speaking person" }, 
+			{ GreetingType.IMPATIENT, "Impatient person" }, 
+			{ GreetingType.MULTILINGUAL, "Multilingual greeting" }, 
+			{ GreetingType.RANDOM, "Random greeting" }, 
+			{ GreetingType.SPANISH, "Spanish person" }, 
+			{ GreetingType.EMPTY, "Empty user input." },
+			{ GreetingType.EXIT, "Exit the application" },
+			{ GreetingType.INVALID, "Invalid user input." },
 		};
 
-		public static readonly Dictionary<Type, string> GreetingStrings = new Dictionary<Type, string> {
-			{ Type.CAT, "Meow." },
-			{ Type.DOG, "Bark!" }, 
-			{ Type.ENGLISH, "Hello" }, 
-			{ Type.FRENCH, "Bonjour" }, 
-			{ Type.IMPATIENT, "" }, 
-			{ Type.MULTILINGUAL, "" }, 
-			{ Type.RANDOM, "" }, 
-			{ Type.SPANISH, "Hola" }, 
-			{ Type.EMPTY, "" },
-			{ Type.EXIT, "Goodbye!" },
-			{ Type.INVALID, "I'm sorry - you have made an invalid selection" },
+		public static readonly Dictionary<GreetingType, string> GreetingStrings = new Dictionary<GreetingType, string> {
+			{ GreetingType.CAT, "Meow." },
+			{ GreetingType.DOG, "Bark!" }, 
+			{ GreetingType.ENGLISH, "Hello" }, 
+			{ GreetingType.FRENCH, "Bonjour" }, 
+			{ GreetingType.IMPATIENT, "" }, 
+			{ GreetingType.MULTILINGUAL, "" }, 
+			{ GreetingType.RANDOM, "" }, 
+			{ GreetingType.SPANISH, "Hola" }, 
+			{ GreetingType.EMPTY, "" },
+			{ GreetingType.EXIT, "Goodbye!" },
+			{ GreetingType.INVALID, "I'm sorry - you have made an invalid selection" },
 		};
 
-		public static void PrintGreeting (Type greetingSelection)
+		public static void PrintGreeting (GreetingType greetingSelection)
 		{
 			switch (greetingSelection) { 
-			case Type.RANDOM: 
+			case GreetingType.RANDOM: 
 				printRandomGreeting ();
 				break;
-			case Type.IMPATIENT:
+			case GreetingType.IMPATIENT:
 				printImpatientGreeting ();
 				break;
-			case Type.MULTILINGUAL:
+			case GreetingType.MULTILINGUAL:
 				printMultilingualGreeting ();
 				break;
 			default:
@@ -69,12 +69,12 @@ namespace MhmGreeter
 
 		static void printRandomGreeting ()
 		{
-			var AvailableRandomGreetings = new List<Type> {
-				Type.CAT,
-				Type.DOG,
-				Type.ENGLISH,
-				Type.FRENCH,
-				Type.SPANISH
+			var AvailableRandomGreetings = new List<GreetingType> {
+				GreetingType.CAT,
+				GreetingType.DOG,
+				GreetingType.ENGLISH,
+				GreetingType.FRENCH,
+				GreetingType.SPANISH
 			};
 
 			var rand = new Random ();
@@ -84,10 +84,10 @@ namespace MhmGreeter
 
 		static void printMultilingualGreeting ()
 		{			
-			var AvailableMultilingualGreetings = new List<Type> {
-				Type.ENGLISH,
-				Type.FRENCH,
-				Type.SPANISH
+			var AvailableMultilingualGreetings = new List<GreetingType> {
+				GreetingType.ENGLISH,
+				GreetingType.FRENCH,
+				GreetingType.SPANISH
 			};
 
 			var rand = new Random ();
