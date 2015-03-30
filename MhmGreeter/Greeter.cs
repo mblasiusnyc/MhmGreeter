@@ -54,11 +54,11 @@ namespace MhmGreeter
 			case GreetingType.RANDOM: 
 				printRandomGreeting ();
 				break;
-			case GreetingType.IMPATIENT:
-				printImpatientGreeting ();
-				break;
 			case GreetingType.MULTILINGUAL:
 				printMultilingualGreeting ();
+				break;
+			case GreetingType.IMPATIENT:
+				printImpatientGreeting ();
 				break;
 			default:
 				Console.WriteLine (GreetingStrings [greetingSelection]);
