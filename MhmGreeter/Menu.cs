@@ -17,13 +17,6 @@ namespace MhmGreeter
 			Console.WriteLine ("Welcome to MhmGreeter!");
 		}
 
-		public void PrintMenu ()
-		{
-			foreach (var menuItem in _menuItems) {
-				PrintMenuItem (menuItem);
-			}
-		}
-
 		public void PromptUser ()
 		{
 			Console.WriteLine ("Please select one of the following Greetings:");
@@ -47,6 +40,13 @@ namespace MhmGreeter
 				return _menuItems [key];
 			} else {
 				return Greeter.GreetingType.INVALID;
+			}
+		}
+
+		void PrintMenu ()
+		{
+			foreach (var menuItem in _menuItems) {
+				PrintMenuItem (menuItem);
 			}
 		}
 
