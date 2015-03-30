@@ -27,15 +27,13 @@ namespace MhmGreeter
 		public void PromptUser ()
 		{
 			Console.WriteLine ("Please select one of the following Greetings:");
-			PrintMenu ();
-			PrintPrompt ();
+			PrintMenuWithPrompt ();
 		}
 
 		public void RepromptUser ()
 		{
 			Console.WriteLine ("Would you like to select another greeting? ('X' to exit):");
-			PrintMenu ();
-			PrintPrompt ();
+			PrintMenuWithPrompt ();
 		}
 
 		public Greeter.GreetingType GetGreetingTypeForKey (string key)
@@ -55,6 +53,12 @@ namespace MhmGreeter
 		void PrintMenuItem (KeyValuePair<string, Greeter.GreetingType> menuItem)
 		{
 			Console.WriteLine (" " + menuItem.Key + ") " + Greeter.MenuDescriptions [menuItem.Value]);
+		}
+
+		void PrintMenuWithPrompt ()
+		{
+			PrintMenu ();
+			PrintPrompt ();
 		}
 
 		void PrintPrompt ()
