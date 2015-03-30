@@ -18,6 +18,7 @@ namespace MhmGreeter
 
 		public void RepromptUser ()
 		{
+			Console.WriteLine ();
 			Console.WriteLine ("Would you like to select another greeting? ('X' to exit):");
 			PrintMenuWithPrompt ();
 		}
