@@ -12,9 +12,10 @@ namespace MhmGreeter
 				{ "b", Greeter.GreetingType.DOG },
 				{ "c", Greeter.GreetingType.CAT },
 				{ "d", Greeter.GreetingType.FRENCH },
-				{ "e", Greeter.GreetingType.MULTILINGUAL },
-				{ "f", Greeter.GreetingType.RANDOM },
-				{ "g", Greeter.GreetingType.IMPATIENT },
+				{ "e", Greeter.GreetingType.SPANISH },
+				{ "f", Greeter.GreetingType.MULTILINGUAL },
+				{ "g", Greeter.GreetingType.RANDOM },
+				{ "h", Greeter.GreetingType.IMPATIENT },
 				{ "x", Greeter.GreetingType.EXIT }
 			});
 
@@ -26,6 +27,7 @@ namespace MhmGreeter
 
 				var greetingSelection = menu.GetGreetingTypeForKey (userInput);
 				Greeter.PrintGreeting (greetingSelection);
+
 				if (greetingSelection == Greeter.GreetingType.EXIT) {
 					break;
 				}

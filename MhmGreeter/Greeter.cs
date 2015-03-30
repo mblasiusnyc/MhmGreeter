@@ -62,7 +62,6 @@ namespace MhmGreeter
 				break;
 			default:
 				Console.WriteLine (GreetingStrings [greetingSelection]);
-				Console.WriteLine ();
 				break;
 			}
 		}
@@ -101,10 +100,8 @@ namespace MhmGreeter
 			_numTimesImpatientGreeterBothered++;
 			if ((_numTimesImpatientGreeterBothered % 3) != 0) {
 				Console.WriteLine (_patientGreeting);
-				Console.WriteLine ();
 			} else {
 				Console.WriteLine (_impatientGreeting);
-				Console.WriteLine ();
 			}
 		}
 

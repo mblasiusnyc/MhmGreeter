@@ -5,8 +5,6 @@ namespace MhmGreeter
 {
 	class Menu
 	{
-		readonly Dictionary<string, Greeter.GreetingType> _menuItems;
-
 		public Menu (Dictionary<string, Greeter.GreetingType> menuItemsConfiguration)
 		{
 			_menuItems = menuItemsConfiguration;
@@ -60,5 +58,7 @@ namespace MhmGreeter
 		{
 			Console.Write (">> ");
 		}
+
+		readonly Dictionary<string, Greeter.GreetingType> _menuItems;
 	}
 }

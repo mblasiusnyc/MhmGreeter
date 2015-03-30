@@ -11,13 +11,11 @@ namespace MhmGreeter.Test
 		[SetUp ()]
 		public void CreateTestMenu ()
 		{
-			var menuConfig = new Dictionary<string, Greeter.GreetingType> () {
+			menu = new Menu ( new Dictionary<string, Greeter.GreetingType> () {
 				{ "a", Greeter.GreetingType.ENGLISH },
 				{ "b", Greeter.GreetingType.DOG },
 				{ "c", Greeter.GreetingType.FRENCH },
-			};
-
-			menu = new Menu (menuConfig);
+			});
 		}
 
 		[Test ()]
