@@ -24,16 +24,6 @@ namespace MhmGreeter
 			}
 		}
 
-		void PrintMenuItem (KeyValuePair<string, Greeter.Type> menuItem)
-		{
-			Console.WriteLine (" " + menuItem.Key + ") " + Greeter.MenuDescriptions [menuItem.Value]);
-		}
-
-		void PrintPrompt ()
-		{
-			Console.Write (">> ");
-		}
-
 		public void PromptUser ()
 		{
 			Console.WriteLine ("Please select one of the following Greetings:");
@@ -60,6 +50,16 @@ namespace MhmGreeter
 			} else {
 				return Greeter.Type.INVALID;
 			}
+		}
+
+		void PrintMenuItem (KeyValuePair<string, Greeter.Type> menuItem)
+		{
+			Console.WriteLine (" " + menuItem.Key + ") " + Greeter.MenuDescriptions [menuItem.Value]);
+		}
+
+		void PrintPrompt ()
+		{
+			Console.Write (">> ");
 		}
 	}
 }
