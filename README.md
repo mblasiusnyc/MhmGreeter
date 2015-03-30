@@ -7,6 +7,10 @@ MhmGreeter is a C# console application that:
 3. Prints the selected greeting to the console
 4. Repeats steps 2-3 until the user chooses  to exit the program
 
+The application was written using Xamarin Studio available at MonoDevelop: http://www.monodevelop.com/
+
+Unit tests were written using Nunit: http://www.nunit.org/
+
 Example session:
 
 ```
