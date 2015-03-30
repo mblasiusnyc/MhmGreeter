@@ -7,7 +7,7 @@ namespace MhmGreeter
 	{
 		public static void Main (string[] args)
 		{
-			var menuConfig = new Dictionary<string, Greeter.GreetingType> () {
+			Menu menu = new Menu ( new Dictionary<string, Greeter.GreetingType> () {
 				{ "a", Greeter.GreetingType.ENGLISH },
 				{ "b", Greeter.GreetingType.DOG },
 				{ "c", Greeter.GreetingType.CAT },
@@ -16,8 +16,7 @@ namespace MhmGreeter
 				{ "f", Greeter.GreetingType.RANDOM },
 				{ "g", Greeter.GreetingType.IMPATIENT },
 				{ "x", Greeter.GreetingType.EXIT }
-			};
-			Menu menu = new Menu (menuConfig);
+			});
 
 			menu.PrintWelcomeScreen ();
 			menu.PromptUser ();
